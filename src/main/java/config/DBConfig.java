@@ -20,7 +20,6 @@ public class DBConfig {
         Connection connection = DriverManager.getConnection(URL, user, password);
 
         return connection;
-
     }
 
 

@@ -2,10 +2,7 @@ package config;
 
 import model.University;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,5 +27,22 @@ public class DBService {
             universityList.add(university);
         }
         return universityList;
+    }
+
+    public static void addUniversity() throws SQLException {
+        Connection connection = DBConfig.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement("insert into university(id,name,address,rektor) values(?,?,?,?)");
+
+        preparedStatement.setInt(1, 17);
+        preparedStatement.setString(2, "123Sejong");
+        preparedStatement.setString(3, "Se");
+        preparedStatement.setString(4, "Jafar");
+//        boolean execute = preparedStatement.execute();
+        System.out.println(preparedStatement.execute());
+//        if (execute) {
+//            System.out.println("Qo'shildi!");
+//        } else {
+//            System.out.println("Xatolik");
+//        }
     }
 }
