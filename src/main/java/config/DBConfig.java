@@ -9,11 +9,11 @@ public class DBConfig {
     public static String mobt = "postgresql";
     public static String host = "localhost";
     public static String port = "5432";
-    public static String DB = "bootcamp_g11";
+    public static String DB = "postgres";
     public static String URL = "jdbc:" + mobt + "://" + host + ":" + port + "/" + DB;
 
     public static String user = "postgres";
-    public static String password = "root123";
+    public static String password = "123";
 
 
     public static Connection getConnection() throws SQLException {
